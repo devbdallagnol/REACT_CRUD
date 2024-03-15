@@ -1,6 +1,8 @@
-<div align="center">
-    <video src="public/Vite_React_video.mp4" width="320" height="240" controls></video>
-</div>
+
+> Demonstração
+
+https://github.com/devbdallagnol/REACT_CRUD/assets/10800022/d331eeb0-ba32-4937-8e5f-cf327bbf2a09
+
 
 <hr>
 
