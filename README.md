@@ -1,4 +1,6 @@
-![HMZ_Solutions](public/Vite-React-desktop.png)
+<div align="center">
+    <video src="public/Vite_React_video.mp4" width="320" height="240" controls></video>
+</div>
 
 <hr>
 
