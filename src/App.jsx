@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { EditIcon, DeleteIcon } from "@chakra-ui/icons";
 import {
   Box,
@@ -12,13 +13,15 @@ import {
   Td,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import ModalComp from "./components/ModalComp";
+import Login from "./components/Login";
 
 const App = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [data, setData] = useState([]);
   const [dataEdit, setDataEdit] = useState({});
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const isMobile = useBreakpointValue({
     base: true,
@@ -31,7 +34,7 @@ const App = () => {
       : [];
 
     setData(db_costumer);
-  }, [setData]);
+  }, []);
 
   const handleRemove = (email) => {
     const newArray = data.filter((item) => item.email !== email);
@@ -40,6 +43,14 @@ const App = () => {
 
     localStorage.setItem("cad_cliente", JSON.stringify(newArray));
   };
+
+  const handleLogin = () => {
+    setIsLoggedIn(true);
+  };
+
+  if (!isLoggedIn) {
+    return <Login onLogin={handleLogin} />;
+  }
 
   return (
     <Flex
